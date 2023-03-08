@@ -1,10 +1,14 @@
 package view;
+import java.awt.Component;
+
 import javax.swing.JOptionPane;
 
 import Controller.KillController;
-public class main {
 
-    public static void main (String[] args) {
+public class main {
+	KillController KController = new KillController();
+
+    public static void main(String[] args) {
       int opc;
       opc=0;
       while(opc!=9) {
@@ -21,10 +25,27 @@ public class main {
         case 1:
         System.out.println(os);
         break;
-
-}
+        
+        case 2:
+        	
+        if(os().contains("windows")) {
+        String process = "TASKLIST/ FO TABLE";
+        KController.ListaProcessos(process);
+       
         }
+        if(os().contains("linux")) {
+        	 String process = "ps - ef ";
+             KController.ListaProcessos(process);
         }
-
+         break;
+         
+        case 3:
+        	
+        break;
 }
-Nąțałヅ
+      }
+    }
+}
+        
+
+	
